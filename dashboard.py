@@ -12,10 +12,12 @@ import plotly.graph_objects as go
 
 def load_data():
     df = pd.read_csv("exchange_rate_gbp_sek.csv")
+    df["Timestamp"] = pd.to_datetime(df["Timestamp"])    
     return df
 
 # Calculer les stats du jour
 def daily_report():
+
     df = load_data()
     if df.empty:
         return "Pas encore de données", {}
@@ -102,4 +104,4 @@ def update_dashboard(n):
     return f"Taux de change actuel : {latest_rate} SEK", figure, report_html
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8050, debug=True)
