@@ -1,6 +1,6 @@
 #!/bin/bash
 # Nom du fichier CSV
-output_file="exchange_rate_gbp_sek.csv"
+output_file="/home/ec2-user/PGL_Seillan_Sorel/exchange_rate_gbp_sek.csv"
 # URL de la page
 url="https://www.xe.com/currencyconverter/convert/?Amount=1&From=GBP&To=SEK"
 # Récupération du HTML
